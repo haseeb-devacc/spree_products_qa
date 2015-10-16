@@ -1,7 +1,7 @@
 class Spree::Question < ActiveRecord::Base
   belongs_to :product
   has_one :answer, dependent: :destroy
-  belongs_to :user
+  belongs_to :user, :class_name => Spree.user_class.to_s
   accepts_nested_attributes_for :answer
 
   default_scope ->{ order("spree_questions.created_at DESC") }

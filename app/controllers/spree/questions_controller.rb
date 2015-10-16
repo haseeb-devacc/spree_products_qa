@@ -3,7 +3,7 @@ class Spree::QuestionsController < Spree::StoreController
 
   def create
     question = @product.questions.new(allowed_params)
-    question.user_id = current_spree_user.id
+    question.user = spree_current_user
     if question.save
       flash[:notice] = t('question.sent')
       redirect_to @product

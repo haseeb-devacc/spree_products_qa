@@ -3,6 +3,10 @@
 
 en:
   questions_and_answers: 'Questions & Answers'
+  questions: 'Questions'
+  is_answered: 'Is Answered'
+  answered: 'Answered'
+  question_posted_by: 'Posted By'
   new_question: 'New question'
   back_to_questions_list: 'Back to questions list'
   ask_question: 'Ask a question'
@@ -19,3 +23,5 @@ en:
   answer_email:
     subject: 'Your question has been answered'
     your_question: 'Your question:'
+  actions:
+    add_answer: 'Add Answer'

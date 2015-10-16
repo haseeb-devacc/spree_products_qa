@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = '0.0.1'
   s.summary     = 'Spree extension that adds Q&A support for products'
   s.description = 'Each product can have separate Q&A section. Registered users can ask a question, that admins answer.'
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.0.0'
 
   s.author    = 'Netguru'
   s.email     = 'hi@netguru.co'
@@ -16,19 +16,20 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.3.0'
-  s.add_dependency 'spree_backend', '~> 2.3.0'
-  s.add_dependency 'sidekiq'
+  s.add_dependency 'spree_core', '~> 2.4.7.beta'
+  s.add_dependency 'spree_backend', '~> 2.4.7.beta' #extension dependency 3.0.4
+  s.add_dependency 'sidekiq' #extension dependency
 
-  s.add_development_dependency 'capybara'
+
+  s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'
   s.add_development_dependency 'database_cleaner'
-  s.add_development_dependency 'factory_girl'
+  s.add_development_dependency 'factory_girl', '~> 4.5'
   s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rspec-rails',  '~> 2.13'
-  s.add_development_dependency 'sass-rails', '~> 4.0.3'
+  s.add_development_dependency 'rspec-rails',  '~> 3.1'
+  s.add_development_dependency 'sass-rails', '~> 5.0.0.beta1'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'pry'
+  s.add_development_dependency 'pry' #extension dependency
 end
