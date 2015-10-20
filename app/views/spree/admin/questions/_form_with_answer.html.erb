@@ -8,6 +8,9 @@
   </label>
 
   <%= f.fields_for :answer, @question.answer_for_form do |a| %>
+      <% unless @question.answer.content.nil? %>
+        <%= link_to '', delete_answer_admin_product_question_path(@product, @question), class: 'delete-resource fa fa-trash icon_link with-tip no-text'%>
+      <% end %>
       <%= a.label :content, raw(Spree::Answer.model_name.human) %>
       <%= a.text_area :content, { rows: "4", class: 'fullwidth' } %>
   <% end %>

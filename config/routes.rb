@@ -1,7 +1,11 @@
 Spree::Core::Engine.routes.draw do
   namespace :admin do
     resources :products do
-      resources :questions
+      resources :questions do
+        member do
+          delete :delete_answer
+        end
+      end
     end
 
     resources :questions, only: [] do
@@ -9,7 +13,9 @@ Spree::Core::Engine.routes.draw do
         get :pending
       end
     end
+
   end
+
 
   resources :questions, only: [:create]
 end
