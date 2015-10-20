@@ -35,7 +35,9 @@
           <td>
             <small>
               <% if question.user.present? %>
-                  <%= t('question.asked_by') %> <%= link_to question.user.email, [:admin, question.user] if question.user.present? %>
+                <%= t('question.asked_by') %> <%= link_to question.user.email, [:admin, question.user] %>
+              <% else %>
+                <%= t('question.asked_by') %> <%= t('admin')%>
               <% end %>
 
             </small>

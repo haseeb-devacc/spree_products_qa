@@ -11,8 +11,9 @@
       <% unless @question.answer.content.nil? %>
         <%= link_to '', delete_answer_admin_product_question_path(@product, @question), class: 'delete-resource fa fa-trash icon_link with-tip no-text'%>
       <% end %>
-      <%= a.label :content, raw(Spree::Answer.model_name.human) %>
-      <%= a.text_area :content, { rows: "4", class: 'fullwidth' } %>
+      <%= a.label :content, raw(Spree::Answer.model_name.human + content_tag(:span, ' *', class: 'required')) %>
+      <%= a.text_area :content, { rows: "4", class: 'fullwidth'} %>
+      <%= f.error_message_on :content %>
   <% end %>
 
   <%= f.field_container :is_visible do %>

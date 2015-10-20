@@ -1,6 +1,7 @@
 class Spree::Answer < ActiveRecord::Base
   belongs_to :question
   belongs_to :user, :class_name => Spree.user_class.to_s
+  validates :content, presence: true
 
   after_create :send_email, if: ->() { SpreeProductsQa.send_email? }
   # after_update :send_email, if: ->() { SpreeProductsQa.send_email? }
