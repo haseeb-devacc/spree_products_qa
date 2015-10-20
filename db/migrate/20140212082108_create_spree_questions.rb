@@ -4,7 +4,7 @@ class CreateSpreeQuestions < ActiveRecord::Migration
       t.integer :product_id
       t.integer :user_id
       t.text :content
-      t.boolean :is_visible, default: true
+      t.boolean :is_visible, default: false
 
       t.timestamps
     end
