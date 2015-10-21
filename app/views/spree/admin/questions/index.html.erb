@@ -12,14 +12,15 @@
 <% if @collection.any? %>
   <table class="index" id="listing_questions">
     <colgroup>
-      <col style="width: 44%;"/>
-      <col style="width: 24%;"/>
+      <col style="width: 38%;"/>
+      <col style="width: 20%;"/>
     </colgroup>
     <thead>
       <tr data-hook="admin_product_questions_index_headers">
         <th><%= t('questions') %></th>
         <th><%= t('question_posted_by') %></th>
         <th><%= t('is_answered') %></th>
+        <th><%= t('question.is_visible') %></th>
         <th data-hook="admin_product_questions_index_header_actions" class="actions"></th>
       </tr>
     </thead>
@@ -35,30 +36,31 @@
           <td>
             <small>
               <% if question.user.present? %>
-                <%= t('question.asked_by') %> <%= link_to question.user.email, [:admin, question.user] %>
+                <%= link_to question.user.email, [:admin, question.user] %>
               <% else %>
-                <%= t('question.asked_by') %> <%= t('admin')%>
+                <%= t('admin')%>
               <% end %>
-
             </small>
+          </td>
+          <td>
             <p>
-                <small>
-                  <%= t('question.is_visible') %> - <%= question.is_visible %>
-                </small>
+              <% if question.answer.present? %>
+                  <% if !question.answer.content.blank?%>
+                      <span class="no_answer"><%= t('true') %></span>
+                  <% else %>
+                      <span class="no_answer"><%= t('question.false') %></span>
+                  <% end %>
+              <% else %>
+                  <span class="no_answer"><%= t('question.false') %></span>
+              <% end %>
             </p>
           </td>
           <td>
             <p>
-              <!--<strong><%= Spree::Answer.model_name.human %>:</strong><br>-->
-              <% if question.answer.present? %>
-                  <% if !question.answer.content.blank?%>
-                    <!--question.answer.content-->
-                      <span class="no_answer"><%= t('answered') %></span>
-                  <% else %>
-                      <span class="no_answer"><%= t('question.no_answer') %></span>
-                  <% end %>
+              <% if question.is_visible%>
+                  <span class="no_answer"><%= t('true') %></span>
               <% else %>
-                  <span class="no_answer"><%= t('question.no_answer') %></span>
+                  <span class="no_answer"><%= t('question.false') %></span>
               <% end %>
             </p>
           </td>

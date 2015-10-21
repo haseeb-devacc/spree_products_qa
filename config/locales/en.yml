@@ -5,7 +5,7 @@ en:
   questions_and_answers: 'Questions & Answers'
   questions: 'Questions'
   is_answered: 'Is Answered'
-  answered: 'Answered'
+  true: 'True'
   question_posted_by: 'Posted By'
   new_question: 'New question'
   back_to_questions_list: 'Back to questions list'
@@ -19,7 +19,7 @@ en:
     content: 'Content'
     asked_by: 'Asked by'
     is_visible: 'Visible in front'
-    no_answer: "There's no answer yet"
+    false: "False"
     sent: 'Question sent, we will answer it soon!'
   answer_email:
     subject: 'Your question has been answered'

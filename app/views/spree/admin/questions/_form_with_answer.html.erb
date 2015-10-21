@@ -8,7 +8,7 @@
   </label>
 
   <%= f.fields_for :answer, @question.answer_for_form do |a| %>
-      <% unless @question.answer.content.nil? %>
+      <% unless @question.answer.content.nil? || @question.answer.content.empty? %>
         <%= link_to '', delete_answer_admin_product_question_path(@product, @question),
                     class: 'fa fa-trash icon_link with-tip no-text', method: 'delete', data: {confirm: 'Are you sure?'} %>
       <% end %>
